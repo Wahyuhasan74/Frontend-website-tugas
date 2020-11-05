@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Teori Bahasa dan Otomata - Task 2</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/task2TBO.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>WAHYU</span></a></h1>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#definition">Definition</a></li>
+          <li><a href="#usability">Usability</a></li>
+          <li><a href="#example">Example</a></li>
+          <li class="drop-down"><a href="">Task</a>
+            <ul>
+              <li><a href="task1TBO.html">Task 1 TBO</a></li>
+              <li><a href="task2TBO.html">Task 2 TBO</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Tugas 2 : Konsep dan Notasi Matematis Dasar</h1>
+      <h2>Pada halaman ini berisi penjelasan singkat mengenai difinisi Notasi Big O, kegunaan Notasi Big O,<br/>
+        dan contoh-contoh Notasi Big O.
+      </h2>
+      <a href="#definition" class="btn-get-started scrollto">Ayo Mulai</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!-- ======= Definition Section ======= -->
+    <section id="definition" class="definition">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Definisi</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/definition.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Pengenalan Notasi Big O</h3>
+            <p>
+                Big O notationadalah suatu notasi matematika yang digunakan untuk pembatasan dari sebuah fungsi   ketika   argumen   dari   sebuah   fungsi menuju   nilai   tertentu   atau   tak   terhingga. Biasanya terdapat dalam fungsi sederhana.Pada    ilmu    komputer,    Big    O    termasuk asymptotic  notations(asimtot  adalahsebuah kurva geometri dari  0  sampai  tak  terhingga)digunakan  untuk  mengukur  kompleksitas  dari sebuah   algoritma.   Secara   matematis   dapat didefinisikan sebagai berikut  :Ada  2  buah  fungsi  f  dan  g  yang  keduanya merupakan  fungsi  pada  bilangan  real. f(n)  =O(g(n))(“=”  di  sini  bukan  berarti “bernilai sama”akan tetapi “adalah”) disebut f(n) Big-Odari g(n)jika  terdapat  dua  buah  bilangan  real positif Cdan n0untuk n  ≥  n0dalam  bentuk notasi dapat digambarkan sebagai berikut :<br/><br/>
+                
+                𝑓(𝑛) = 𝑂(𝑔(𝑛)) ↔ { ∃𝐶 > 0, ∃𝑛0 > 0, ∀𝑛 ≥ 𝑛0 : 𝑓(𝑛) ≤ 𝑔(𝑛) }
+          </div>
+        </div>
+      </div>
+    </section><!-- End definition Section -->
+
+    <!-- ======= Usability Section ======= -->
+    <section id="usability" class="usability">
+      <div class="container">
+        <div class="section-title">
+            <h2>Kegunaan</h2>
+        </div>
+    
+            <div class="row">
+              <div class="col-lg-6 order-1 order-lg-2">
+                <img src="assets/img/usability.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+                <h3>Kegunaan dari Notasi Big O</h3>
+                <p>
+                    Terdapat 2 macam penggunaan pada notasi ini :<br/>
+                </p>
+                <ol>
+                  <li>Infinite asymptotic</li>
+                  <li>Infinitesimal asymptotic</li>
+                </ol>
+                <p>
+                    Perbedaan keduanya hanya pada pengaplikasian bukan pada metode dasar.<br/><br/>
+                </p>
+                <h3>Infinite Asymptotic</h3>
+                <p>
+                    Untuk penggunaan pada infinite asymptotic biasanya terdapat dalam bidang ilmu komputer untuk menganalisa kompleksitas dari suatu algoritma. Misal adalah waktu (di mana waktu adalah indikator kemangkusan dan efisiensi dari suatu algoritma) yang diperlukan algoritma untuk penyelesaian masalah :<br/><br/>
+
+                    T(n) ≤ cg(n) untuk semua n ≥ n0<br/><br/>
+
+                    Contoh :<br/><br/>
+
+                    T(n) = 100n + 5 ∈ O(n^2)<br/><br/>
+
+                    100n + 5 ≤ 100n + n ( untuk semua n≥5) = 101n ≤ 101n^2<br/><br/>
+
+                    Kita dapat menentukan konstanta C = 101 dan n0 = 5.<br/><br/>
+
+                    Tetapi kita dapat menentukan konstanta C dan n0 yang lain :<br/><br/>
+
+                    100n + 5 ≤ 100n + 5n (untuk semua n ≥ 1) = 105n ≤ n^2<br/><br/>
+
+                    Sehingga misal untuk menghitung waktu efisiensi dari suatu algoritma : T(n)= 5n^2+n+1, di mana ketika n bertambah semakin besar maka suku n^2 akan mendominasi pertumbuhan sehingga jika n = 100, suku 5n^2 akan 500 kali lebih besar dari suku n. Maka kita dapat mengabaikan suku-suku yang lebih kecil yang tidak akan memberikan efek yang signifikan.<br/><br/>
+                    
+                    Ekspresi untuk penggunaan pada infinite asymptotic kasus tadi adalah :<br/>
+                    T(n) ∈ O(n^2)
+                </p>
+                <h3>Infinitesimal Asymptotic</h3>
+                <p>
+                    Penggunaan pada infinitesimal asymptotic dilakukan untuk menggambarkan kesalahan dalam sebuah aproksimasi dalam fungsi matematika di mana contoh ekspresinya seperti di bawah :<br/><br/>
+
+                    ℯ𝑥 -(1 + 𝑥 + 𝑥^2/2)
+                </p>
+              </div>
+            </div>
+          </div>
+        </section><!-- End Usability Section -->
+
+
+    <!-- ======= Example Section ======= -->
+    <section id="example" class="example">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contoh</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/examplebigo.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Notasi Big O bisa dicontohkan seperti :</h3>
+            <ul>
+              <li>O(1)</li>
+              <li>O(N)</li>
+              <li>O(N^2)</li>
+              <li>O(N^3)</li>
+              <li>O(sqrt(N))</li>
+              <li>O(log N)</li>
+              <li>O(N log N)</li>
+              <li>O(N!)</li>
+              <li>O(2^N)</li>
+            </ul>
+            <h3>Pembahasan</h3>
+            <p>
+                Kecepatan program yang diinginkan seorang programmer adalah O(1) yang maksudnya bagaimanapun kompleksnya suatu program kecepatannya tetap sama yaitu O(1), Sedangkan O(N) kecepatannya lambat. O(N) maksudnya waktu yang diperlukan sebanding atau berbanding lurus dengan banyaknya data, simplenya ada data berjumlah 10 yang selesai dalam 1 detik misalnya, maka ketika datanya 100 biji selesainya dalam 10 detik, jadi waktu yang diperlukan 10 kali, beda dengan O(1) berapapun data input selesainya tetap 1 detik.<br/><br/>
+                
+                O(N^2) artinya kecepatan program menjadi N^2 atau berbanding parabolic, waktu yang diperlukan itu berbanding kuadrat dengan banyaknya data, artinya misal data sebanyak 10 selesai dalam 1 detik, maka data 100 selesai dalam 100 detik. ( data 10 menjadi data 100, maka 10 x lipat, waktu jadi 10*10 = 100 kali!).<br/><br/>
+                
+                Jadi Notasi Big O meng-capture tingkat pertumbuhan yang akhirnya terjadi, disini dia tidak akan peduli tentang konstanta. Maka di dunia big 0,atau dunia asymptotic, kita punya data 1 juta atau 1 saja itu sama saja.<br/><br/>
+
+                1 = O(1)<br/>
+                10000000 = O(1), data 1 juta kali lipat tetap O(1).<br/><br/>
+
+                Dan di dunia O besar, di dunia asimtotik, apakah kita memiliki satu juta atau satu, perbedaan yang sama. O besar persis sama. Jadi kami katakan satu juta adalah O besar (1). Jadi, perhatikan bahwa cara membaca kalimat, equal dan capital O kemudian braket adalah fungsi lain.<br/><br/>
+                
+                Cara membacanya adalah, sisi kiri adalah big O besar dari apa yang ada di dalam kurung itu. Dan di sini kita memiliki satu juta adalah big O (1). Dan contohnya inisiasi biaya (initialization costs), konstanta itu mungkin saja biaya inisialisasi ketika kita memulai program baru. Maka kita mungkin harus melakukan banyak pekerjaan yang sibuk di awal,tetapi pekerjaan yang sibuk itu sama, tidak peduli apa pun input kita.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Example Section -->
+
+  </main>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Wahyu Ahmad Hasan</span></strong>.
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

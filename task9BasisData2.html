@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Basis Data 2 - Task 1</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/task9BasisData2.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>WAHYU</span></a></h1>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#definition">Definition</a></li>
+          <li><a href="#example">Example</a></li>
+          <li class="drop-down"><a href="">Task</a>
+            <ul>
+              <li><a href="task4BasisData2.html">Task 4 Basis Data 2</a></li>
+              <li><a href="task5BasisData2.html">Task 5 Basis Data 2</a></li>
+              <li><a href="task6BasisData2.html">Task 6 Basis Data 2</a></li>
+              <li><a href="task9BasisData2.html">Task 9 Basis Data 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Tugas 9 <br/> 
+        Contoh Kasus transaksi menggunakan requirement ACID
+    </h1>
+      <h2>jabarkan dengan jelas step-step dari transaksi tersebut dan alasan mengapa operasi<br/> 
+          tersebut harus dibuat dalam transaksi berdasarkan requirement ACID.
+      </h2>
+      <a href="#definition" class="btn-get-started scrollto">Ayo Mulai</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!-- ======= Definition Section ======= -->
+    <section id="definition" class="definition">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Database Transaction</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/learn.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <p>
+                Dalam database management system (dbms) ada yang di sebut transaction. Transaction dalam dbms ini bertujuan 
+                untuk menggabungkan beberapa statement perubahan kedalam database menjadi dianggap satu kesatuan. Dilakukan
+                semuanya atau tidak sama sekali (all or nothing) sehingga tidak terjadi ketidakkonsistenan data.<br/>
+                Transaksi mempunyai 2 fungsi utama:
+                <ol>
+                    <li>Menyediakan reliabilitas, artinya jika terjadi kesalahan pada salah satu statement maka seluruh
+                        perubahan akan digagalkan. Sehingga data yang tersimpan benar benar reliable(dapat diandalkan).
+                    </li>
+                    <li>Melakukan isolasi, artinya satu transaksi harus di proses satu persatu. Sehingga tidak ada
+                        kemungkinan 2 program mengakses atau bahkan mengubah data sekaligus.
+                    </li>
+                </ol>
+                Di dalam DBMS ini terdiri dari fungsi-fungsi yang mendukung semua basis data yang ada didalamnya yaitu 
+                Atomicity, Consistency, Isolation, Durability (ACID). Setiap  relational database harus memenuhi 
+                kriteria ACID. Dengan demikian, DBMS ini memberikan jaminan bahwa data yang tersimpan didalamnya 
+                memiliki kualitas yang baik. Berikut penjelasan mengenai Atomicity, Consistency, Isolation, dan Durability:<br/><br/>
+                <ol>
+                    <li>Atomicity<br/>
+                        Dengan adanya fungsi ini, DBMS menjamin bahwa data yang disimpan akan lengkap pada saat
+                        pemprosesan. Sebagai contoh :<br/> 
+                        Apabila terdapat proses yang sedang berjalan namun terdapat kegagalan proses karena kondisi 
+                        jaringan putus, maka dengan atomicity ini seluruh data yang telah di proses akan dibatalkan.<br/>
+                        Jadi bisa disimpulkan bahwa apabila terjadi sedikit kegagalan maka akan dibatalkan semuanya untuk 
+                        menjaga kesempurnaan data.<br/><br/>
+                    </li>
+                    <li>Consistency<br/>
+                        DBMS akan menjamin bahwa dengan consistency ini data transaksi yang tersimpan akan sesuai 
+                        dengan referensi data utama, dan menghindari duplikasi data. Sebagai contoh: <br/>
+                        jika terdapat suatu proses yang sedang menambahkan data yang tidak terdapat pada data 
+                        referensi, maka dengan adanya consistency DBMS akan menolak proses ini.<br/><br/>
+                    </li>
+                    <li>Isolation<br/>
+                        Data akan lebih aman dengan fungsi isolasi ini, dimana pada saat data dibuka secara 
+                        serial data tetap aman meskipun terjadi perubahan. Referensi lebih jelas dapat menuju ke tautan isolation.<br/><br/>
+                    </li>
+                    <li>Durability<br/>
+                        Dengan adanya fungsi ini, maka ketahanan data yang tersimpan akan terjamin. Meskipun sangat banyak data 
+                        yang tersimpan didalam basis data, namun DBMS memberikan jaminan bahwa data tidak akan rusak.<br/><br/>
+                    </li>
+                </ol>
+                Tidak semua DBMS memiliki fungsi ini, sehingga perlu untuk memilih DBMS yang sesuai dengan kebutuhan pengguna.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Definition Section -->
+
+    <!-- ======= Example Section ======= -->
+    <section id="example" class="example">
+      <div class="container">
+        <div class="section-title">
+            <h2>Contoh kasus</h2>
+        </div>
+    
+            <div class="row">
+              <div class="col-lg-6 order-1 order-lg-2">
+                <img src="assets/img/studykasus.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+                <p>
+                  Contoh kasus yang diambil adalah si A ingin membeli makanan di sebuah rumah makan sebesar Rp. 50.000,-. 
+                  Dan ia ingin membayar menggunakan via OVO yang disediakan oleh rumah makan. Berikut adalah proses 
+                  transaksinya:
+                    
+                    <ol>
+                        <li>read(saldo_A)
+                        </li>
+                        <li>saldo_A := saldo_A - 50.000
+                        </li>
+                        <li>write(saldo_A)
+                        </li>
+                        <li>read(saldo_rumah_makan)
+                        </li>
+                        <li>saldo_rumah_makan := saldo_rumah_makan + 50.000
+                        </li>
+                        <li>write(saldo_rumah_makan)
+                        </li>
+                    </ol>
+                    Berikut adalah penjelasan properti ACID yang terjadi pada proses transaksi di atas.<br/><br/>
+                    <ol>
+                      <li>Atomicity requirement</li>
+                      <p>Jika transaksi gagal setelah step 3 dan sebelum langkah 6, uang akan "hilang" uang mengarah 
+                        ke status database yang tidak konsisten. Sistem harus memastikan bahwa pembaruan dari transaksi 
+                        yang dijalankan sebagian tidak tercermin dalam database.
+                      </p>
+                      <li>Consistency requirement</li>
+                      <p>Secara umum, persyaratan konsistensi meliputi:<br/><br/>
+                      <ol>
+                        <li>Batasan integritas yang ditentukan secara eksplisit seperti primary key dan foreign key</li>
+                        <li>Batasan integritas implisit. Misalnya, jumlah saldo semua akun, dikurangi jumlah pinjaman harus sama dengan nilai tunai di tangan.</li>
+                        <li>Transaksi harus melihat database yang konsisten.</li>
+                        <li>Selama eksekusi transaksi, database mungkin untuk sementara tidak konsisten.</li>
+                        <li>Ketika transaksi berhasil diselesaikan, database harus konsisten.</li>
+                      </ol>
+                      </p>
+                      <li>Isolation requirement</li>
+                      <p>Jika antara langkah 3 dan 6, transaksi lain T2 diizinkan untuk mengakses database yang diperbaharui sebagian, database akan terlihat 
+                        tidak konsisten. Isolasi dapat dilakukan dengan menjalankan transaksi secara serial (satu demi satu)
+                      </p>
+                      <li>Durability requirement</li>
+                      <p>Setelah si A diberi tahu bahwa transaksi telah selesai (yaitu membayar Rp. 50.000,- telah dilakukan), 
+                        pembaruan ke database oleh transaksi harus tetap ada meskipun ada kegagalan.</p>
+                    </ol>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section><!-- End Example Section -->
+
+  </main>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Wahyu Ahmad Hasan</span></strong>.
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

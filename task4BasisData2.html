@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Basis Data 2 - Task 1</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/task4BasisData2.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>WAHYU</span></a></h1>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#costquery">Cost Query</a></li>
+          <li><a href="#single">An Expression</a></li>
+          <li><a href="#multiple">Multiple Expression</a></li>
+          <li><a href="#difference">Difference</a></li>
+          <li class="drop-down"><a href="">Task</a>
+            <ul>
+              <li><a href="task4BasisData2.html">Task 4 Basis Data 2</a></li>
+              <li><a href="task5BasisData2.html">Task 5 Basis Data 2</a></li>
+              <li><a href="task6BasisData2.html">Task 6 Basis Data 2</a></li>
+              <li><a href="task9BasisData2.html">Task 9 Basis Data 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Tugas 4 <br/> Prinsip kerja pemrosesan query dalam basis data</h1>
+      <h2>Pada halaman ini berisi penjelasan singkat mengenai bagaimana mengukur biaya sebuah query,<br/> 
+        bagaimana sebuah sistem db mengevaluasi sebuah ekspresi<br/> 
+        dan bagaimana sebuah sistem db mengevaluasi multiple ekspresi
+      </h2>
+      <a href="#costquery" class="btn-get-started scrollto">Ayo Mulai</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!-- ======= Cost Query Section ======= -->
+    <section id="costquery" class="costquery">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Mengukur Biaya Sebuah Query</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/cost-query.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Hal yang Mempengaruhi Optimasi Query</h3>
+            <p>
+                Ada tiga aspek dasar yang ditetapkan dan mempengaruhi optimisasi query, yaitu : search space, cost model dan search strategy.<br/><br/>
+                
+                Search space adalah sekumpulan rencana-rencana akses yang sama secara logika yang dapat digunakan 
+                untuk mengevaluasi sebuah query. Semua rencana-rencana dalam search space query mengembalikan hasil 
+                yang sama biarpun beberapa rencana lebih efisien dibandingkan dengan rencana yang lainnya.<br/><br>
+                
+                Cost model menandakan sebuah harga untuk tiap rencana dalam search space. Harga dari rencana tersebut 
+                adalah sebuah perkiraan dari sumber-sumber yang digunakan pada saat rencana dijalankan, dimana harga 
+                yang lebih rendah, merupakan yang terbaik dari rencana-rencana yang ada.<br/><br/>
+                
+                Search strategy adalah sebuah perincian dari rencana-rencana mana dalam search space yang akan diperiksa. 
+                Apabila search space-nya kecil, maka strategi yang dapat diteruskan adalah menghitung dan mengevaluasi 
+                setiap rencana. Meskipun kebanyakan search space bahkan untuk query-query yang sederhana adalah sangat 
+                besar, akan tetapi query optimizer selalu memerlukan aturan heuristik untuk mengontrol nomer dari 
+                rencana-rencana yang akan diperiksa.<br/><br/>
+            </p>
+            <h3>Estimasi Biaya Query</h3>
+            <p>
+                Strategi yang dipilih dalam evaluasi query tergantung pada estimasi biaya dari masing-masing strategi yang ada.
+                Optimizer Query akan membuat informasi statistik yang disimpan dalam katalog DMBS untuk memperkirakan biaya dari sebuah rencana query.
+                <br/><br/>
+            </p>
+            <h3>Pengukuran Biaya Query</h3>
+            <p>
+                Biaya evaluasi query dapat diukur dari banyaknya sumber daya sistem yang digunakan, <br/>
+                misalnya: pengaksesan disk,waktu CPU,dan waktu komunikasi<br/><br/>
+            </p>
+            <h3>Contoh Pengukuran Biaya Query</h3>
+            <p>
+                Contoh menghitung biaya pada operasi join<br/>
+                mhs |X| nilai<br/>
+                n^mhs = 1200<br/>
+                f^mhs = 20<br/>
+                n^nilai= 10,000<br/>
+                f^nilai = 50<br/>
+                V(kode_kul,nilai)= 50<br/>
+                V(nim,nilai)= 1000<br/><br/>
+                b^mhs= 1200/20 = 60 blok (biaya akses disk)<br/>
+                b^nilai= 10,000/50 = 200 blok(biaya akses disk)<br/>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Cost Query Section -->
+
+    <!-- ======= An Expression Section ======= -->
+    <section id="single" class="single">
+      <div class="container">
+        <div class="section-title">
+            <h2>Sistem Database Mengevaluasi Sebuah Ekspresi</h2>
+        </div>
+    
+            <div class="row">
+              <div class="col-lg-6 order-1 order-lg-2">
+                <img src="assets/img/single.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+                <h3>Materialisasi dalam Pemrosesan Kueri</h3>
+                <p>
+                    Sebelumnya, kita mengambil pengantar singkat tentang materialisasi dan cara mengevaluasi beberapa operasi ekspresi.<br/><br/>
+
+                    Materialisasi adalah pendekatan mudah untuk mengevaluasi beberapa operasi dari kueri yang diberikan 
+                    dan menyimpan hasilnya dalam hubungan sementara. Hasilnya bisa berupa keluaran dari kondisi sambungan 
+                    apapun, kondisi seleksi, dan banyak lagi. Jadi, materialisasi adalah proses membuat dan mengatur 
+                    tampilan hasil operasi yang dievaluasi untuk kueri pengguna. Ini mirip dengan memori cache tempat data 
+                    yang dicari diselesaikan sementara. Kita dapat dengan mudah memahami cara kerja materialisasi melalui 
+                    representasi gambar dari ekspresi. Pohon operator digunakan untuk merepresentasikan ekspresi.<br/><br/>
+                    
+                    Materialisasi menggunakan pendekatan berikut untuk mengevaluasi operasi dari ekspresi yang diberikan:
+                    
+                    <ol>
+                        <li>Di pohon operator, kita mulai dari operasi tingkat terendah (di bagian bawah pohon) dalam ekspresi. 
+                            Input ke operasi level terendah disimpan dalam bentuk relasi di database. Misalnya, kita ingin 
+                            mengambil nama siswa sebagai 'John' dari relasi 'Mahasiswa'.<br/><br/>
+                            
+                            Ekspresi relasinya akan menjadi:<br/>
+                            σ name = "John" (Mahasiswa)<br/><br/>
+                            
+                            Dalam contoh ini, hanya ada satu operasi pemilihan nama dari relasi yang diberikan. Selain itu, 
+                            operasi ini adalah operasi tingkat terendah. Jadi, kami akan mulai dengan mengevaluasi operasi 
+                            pemilihan ini.<br/><br/>
+                        </li>
+                        <li>Sekarang, kita akan menggunakan algoritma yang sesuai untuk mengevaluasi operasi. Seperti dalam 
+                            contoh kita, kita akan menggunakan algoritma pemilihan yang sesuai untuk mengambil nama dari 
+                            relasi Student.<br/><br/>
+                        </li>
+                        <li>Kemudian, simpan hasil operasi dalam hubungan sementara.<br/><br/>
+                        </li>
+                        <li>Kami menggunakan hubungan sementara ini untuk mengevaluasi operasi tingkat berikutnya di pohon 
+                            operator. Hasilnya berfungsi sebagai masukan untuk setiap level berikutnya di pohon.<br/><br/>
+                        </li>
+                        <li>Ulangi langkah-langkah ini sampai semua operator di akar pohon akan dievaluasi, dan hasil akhir 
+                            ekspresi akan dibuat.<br/><br/>
+                        </li>
+                    </ol>
+                    Kita juga menyebut evaluasi yang dideskripsikan sebagai evaluasi terwujud karena hasil dari satu operasi 
+                    terwujud dan digunakan dalam evaluasi operasi berikutnya dan seterusnya.<br/><br/>
+                </p>
+                <h3>Estimasi Biaya Evaluasi Terwujud</h3>
+                
+                <p> Proses memperkirakan biaya evaluasi yang terwujud berbeda dari proses memperkirakan biaya suatu algoritma. 
+                    Itu karena dalam menganalisis biaya suatu algoritma, kita tidak memasukkan biaya penulisan hasil ke disk. 
+                    Namun dalam evaluasi ekspresi, kita tidak hanya menghitung biaya semua operasi tetapi juga menyertakan biaya
+                    penulisan hasil operasi yang saat ini dievaluasi ke disk.<br/><br/>
+                    
+                    Untuk memperkirakan biaya evaluasi yang terwujud, kita menganggap bahwa hasil disimpan dalam buffer, 
+                    dan ketika buffer terisi penuh, hasilnya disimpan ke disk.<br/><br/>
+                    
+                    Misalkan, total jumlah br blok ditulis. Jadi, kami dapat memperkirakan br sebagai:<br/>
+                    br = nr / fr.<br/><br/>
+                    
+                    Di sini, nr adalah taksiran jumlah tupel pada relasi hasil r dan fr adalah banyaknya record relasi r yang 
+                    sesuai dalam sebuah blok. Jadi, fr adalah faktor pemblokiran dari relasi resultan r.<br/><br/>
+                    
+                    Dengan ini, kita juga perlu menghitung waktu transfer dengan memperkirakan jumlah disk yang dibutuhkan. 
+                    Ini karena kepala disk mungkin telah berpindah di antara penulisan blok yang berurutan. 
+                    Dengan demikian, kita dapat memperkirakan:<br/>
+                    Jumlah pencarian = Γ br / bbꓶ<br/><br/>
+                    
+                    Di sini, bb mendefinisikan ukuran buffer keluaran, yaitu diukur dalam blok.<br/><br/>
+                    
+                    Estimasi biaya proses materialisasi dapat dioptimalkan dengan menggunakan konsep double buffering. 
+                    Buffer ganda adalah metode menggunakan dua buffer, di mana satu buffer menjalankan algoritme secara 
+                    terus menerus, dan yang lainnya sedang ditulis. Itu membuat algoritme untuk mengeksekusi lebih cepat 
+                    dengan melakukan aktivitas CPU secara paralel dengan aktivitas I / O. Kita juga dapat mengurangi 
+                    jumlah pencarian dengan mengalokasikan blok ekstra ke buffer keluaran dan sekaligus menulis banyak blok.<br/><br/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section><!-- End An Expression Section -->
+
+    <!-- ======= Multiple Expression Section ======= -->
+    <section id="multiple" class="multiple">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Sistem Database Mengevaluasi Multiple Ekspresi</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/multiple.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Pipelining dalam Pemrosesan Kueri</h3>
+            <p>
+                Di bagian sebelumnya, kita belajar tentang materialisasi di mana kita mengevaluasi beberapa operasi 
+                dalam ekspresi yang diberikan melalui hubungan sementara. Tapi, itu mengarah pada kekurangan 
+                menghasilkan banyak file sementara. Itu membuat evaluasi kueri kurang efisien. Namun, evaluasi query 
+                harus sangat efisien dalam menghasilkan keluaran yang efektif.<br/><br/>
+
+                Di sini, kita akan membahas metode lain untuk mengevaluasi beberapa operasi ekspresi yang bekerja lebih 
+                efisien daripada materialisasi. Cara yang lebih efisien seperti itu dikenal sebagai Pipelining. 
+                Pipelining membantu meningkatkan efisiensi evaluasi kueri dengan mengurangi produksi sejumlah file 
+                sementara. Sebenarnya, kami mengurangi pembuatan file sementara dengan menggabungkan beberapa operasi 
+                ke dalam satu pipeline. Hasil dari satu operasi yang saat ini dijalankan diteruskan ke operasi berikutnya 
+                untuk eksekusinya, dan rantai berlanjut hingga semua operasi selesai, dan kita mendapatkan hasil akhir 
+                dari ekspresi tersebut. Jenis proses evaluasi seperti itu dikenal sebagai Evaluasi Pipelined.<br/><br/>
+            </p>  
+            <h3>Keuntungan Pipeline</h3>
+            <p>
+                Ada keuntungan berikut dalam membuat pipelining operasi:
+            <ol>
+                <li>
+                    Mengurangi biaya evaluasi kueri dengan menghilangkan biaya membaca dan menulis hubungan sementara, 
+                    tidak seperti proses perwujudan.
+                </li>
+                <li>Jika kita menggabungkan operator root dari rencana evaluasi kueri dalam pipeline dengan masukannya, 
+                    proses menghasilkan hasil kueri menjadi cepat. Hasilnya, ini bermanfaat bagi pengguna karena mereka 
+                    dapat melihat hasil dari pertanyaan yang mereka tanyakan segera setelah output dihasilkan. Lain, 
+                    pengguna harus menunggu waktu yang tinggi untuk mendapatkan dan melihat hasil kueri apa pun.
+                </li>
+            </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Multiple Expression Section -->
+
+    <!-- ======= Difference Section ======= -->
+    <section id="difference" class="difference">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Perbedaan Materialisasi dan Pipalining</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/difference.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Materialisasi Vs Pipelining</h3>
+            <p>
+                Meskipun kedua metode digunakan untuk mengevaluasi beberapa 
+                operasi ekspresi, ada sedikit perbedaan di antara keduanya. Perbedaan poin 
+                dijelaskan pada tabel di bawah ini:
+            </p>
+            <table>
+                <tr>
+                  <th>Materialisasi</th>
+                  <th>Pipalining</th>
+                </tr>
+                <tr>
+                  <td>Ini adalah pendekatan tradisional untuk mengevaluasi beberapa operasi.</td>
+                  <td>Ini adalah pendekatan modern untuk mengevaluasi beberapa operasi.</td>
+                </tr>
+                <tr>
+                  <td>Ini menggunakan hubungan sementara untuk menyimpan hasil operasi yang 
+                      dievaluasi. Jadi, dibutuhkan lebih banyak file sementara dan I / O.</td>
+                  <td>Itu tidak menggunakan hubungan sementara apa pun untuk menyimpan 
+                      hasil operasi yang dievaluasi.</td>
+                </tr>
+                <tr>
+                  <td>Ini kurang efisien karena membutuhkan waktu untuk menghasilkan hasil kueri.</td>
+                  <td>Ini adalah cara evaluasi kueri yang lebih efisien karena menghasilkan hasil dengan cepat.</td>
+                </tr>
+                <tr>
+                  <td>Itu tidak memiliki persyaratan yang lebih tinggi untuk buffer memori untuk evaluasi kueri.</td>
+                  <td>Ini membutuhkan buffer memori dengan kecepatan tinggi untuk menghasilkan keluaran. Buffer 
+                      memori yang tidak mencukupi akan menyebabkan thrashing.</td>
+                </tr>
+                <tr>
+                  <td>Tidak ada pemborosan yang terjadi dalam perwujudan. Jadi, dalam kasus seperti itu, 
+                      materialisasi memiliki kinerja yang lebih baik.</td>
+                  <td>Kinerja buruk jika terjadi pembuangan.</td>
+                </tr>
+                <tr>
+                  <td>Biaya keseluruhan sudah termasuk biaya operasional ditambah biaya pembacaan dan 
+                      penulisan hasil pada penyimpanan sementara.</td>
+                  <td>Ini mengoptimalkan biaya evaluasi kueri. Karena belum termasuk biaya baca tulis 
+                      maka penyimpanan sementara.</td>
+                </tr>
+              </table>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Difference Section -->
+
+  </main>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Wahyu Ahmad Hasan</span></strong>.
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
